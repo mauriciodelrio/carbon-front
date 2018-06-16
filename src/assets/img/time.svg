@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-580 406 48.35 56.41">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-time);
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #ff550f;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="48.35" height="56.41" transform="translate(-10320 -3843)"/>
+    </clipPath>
+    <clipPath id="clip-time">
+      <rect x="-580" y="406" width="48.35" height="56.41"/>
+    </clipPath>
+  </defs>
+  <g id="time" class="cls-1">
+    <g id="time-2" data-name="time" class="cls-2" transform="translate(9740 4249)">
+      <path id="Path_9368" data-name="Path 9368" class="cls-3" d="M15.174,32.035a18.788,18.788,0,1,1,13.3-5.5,18.8,18.8,0,0,1-13.3,5.5M34.054-1.836,37.871-5.65a29.675,29.675,0,0,0-3.787-3.787L30.27-5.624a24.2,24.2,0,1,0,3.785,3.787M12.488,15.918H17.86V-.2H12.488ZM23.232-19H7.116v5.372H23.232Z" transform="translate(-10311 -3824)"/>
+    </g>
+  </g>
+</svg>

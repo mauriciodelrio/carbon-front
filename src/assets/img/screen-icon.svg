@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-14808 9729 178 178">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Artboard_2);
+      }
+
+      .cls-2 {
+        fill: #ff550f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Artboard_2">
+      <rect x="-14808" y="9729" width="178" height="178"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_2" data-name="Artboard – 2" class="cls-1">
+    <rect class="cls-3" x="-14808" y="9729" width="178" height="178"/>
+    <g id="Group_2666" data-name="Group 2666" transform="translate(-14838 9710.32)">
+      <circle id="Ellipse_112" data-name="Ellipse 112" class="cls-2" cx="86.12" cy="86.12" r="86.12" transform="translate(33 21.68)"/>
+      <path id="Path_1767" data-name="Path 1767" class="cls-3" d="M11.413,11.413A11.382,11.382,0,0,0,0,0V11.413Z" transform="translate(65.586 137.571)"/>
+      <path id="Path_1768" data-name="Path 1768" class="cls-3" d="M84.413,0H10.622A10.61,10.61,0,0,0,0,10.622V33.336a46.7,46.7,0,0,1,6.893,1.469v-24.3A3.762,3.762,0,0,1,10.622,6.78H84.413a3.762,3.762,0,0,1,3.729,3.729V60.8a3.762,3.762,0,0,1-3.729,3.729H37.291a46.943,46.943,0,0,1,1.582,6.893h45.54A10.61,10.61,0,0,0,95.035,60.8V10.509A10.735,10.735,0,0,0,84.413,0" transform="translate(71.8 70.559)"/>
+      <path id="Path_1769" data-name="Path 1769" class="cls-3" d="M16.5,25.652h9.153A25.705,25.705,0,0,0,0,0V9.153a16.518,16.518,0,0,1,16.5,16.5" transform="translate(65.586 123.332)"/>
+      <path id="Path_1770" data-name="Path 1770" class="cls-3" d="M31.189,40.342h9.153A40.366,40.366,0,0,0,0,0V9.153A31.252,31.252,0,0,1,31.189,40.342" transform="translate(65.586 108.642)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-10937 -16436 85 85">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-check);
+      }
+
+      .cls-2 {
+        fill: #ff550f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-check">
+      <rect x="-10937" y="-16436" width="85" height="85"/>
+    </clipPath>
+  </defs>
+  <g id="check" class="cls-1">
+    <g id="Group_5506" data-name="Group 5506" transform="translate(-12505 -16547)">
+      <g id="Group_5227" data-name="Group 5227" transform="translate(1568 111)">
+        <circle id="ellipse-3" class="cls-2" cx="42.5" cy="42.5" r="42.5"/>
+        <g id="Group_5226" data-name="Group 5226" transform="translate(22.368 26.842)">
+          <g id="Group_5203" data-name="Group 5203" transform="translate(0 0)">
+            <path id="Path_4348" data-name="Path 4348" class="cls-3" d="M6.914,13.086-2.414,3.758-5.59,6.912l12.5,12.5L33.756-7.426,30.6-10.58Z" transform="translate(5.59 10.58)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

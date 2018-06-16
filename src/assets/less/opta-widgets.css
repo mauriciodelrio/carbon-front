@@ -1,0 +1,88 @@
+.Opta .Opta-FootballPitch .Opta-Node circle.Opta-Home {
+  fill: #000000;
+  stroke: #FFF;
+}
+
+.Opta .Opta-H2, .Opta h2 {
+  background: #FF550F;
+}
+
+.Opta .Opta-Nav li.Opta-On a{
+  color: #FFF;
+  background-color: #FF550F;
+}
+.Opta .Opta-Nav a{
+  background: #FFF;
+  font-family: "proxima-soft";
+  border: 2px solid #FF550F;
+  border-radius: 50px;
+  margin: 10px 5px;
+  line-height: 26px;
+}
+.Opta .Opta-Nav li.Opta-On a:hover{
+    background: #FF550F;
+}
+.Opta .Opta-Nav a:hover{
+  background: #FF550F;
+  color: #fff;
+}
+.Opta .Opta-Tabs .Opta-Nav>ul{
+  background: #FFF;
+}
+.Opta-Tooltip-Key{
+  background: #FF550F;
+}
+.Opta-Category-Title a{
+  border: none !important;
+}
+.Opta .Opta-TimeControls .Opta-PeriodButtons button.Opta-On, .Opta .Opta-TimeControls .Opta-PeriodButtons button.Opta-On:hover{
+  background: #FF550F;
+  border-radius: 22px;
+}
+.Opta .Opta-TimeControls .Opta-PeriodButtons button{
+  border-radius: 22px;
+  background: transparent;
+  border: 2px solid #FF550F;
+}
+.Opta .Opta-TimeControls .Opta-PeriodButtons button:hover{
+  background-color: #FF550D;
+  color: #fff;
+}
+.Opta .Opta-TimeControls .Opta-Dragger path{
+  fill: #FF550F;
+}
+.Opta .Opta-MatchHeader div.Opta-MatchHeader-Details>div, .Opta .Opta-MatchHeader tr.Opta-MatchHeader-Details td>div{
+  border: 2px solid #ff550f;
+  border-radius: 22px;
+  background: transparent;
+}
+.Opta .Opta-MatchHeader .Opta-Score .Opta-Team-Score{
+  border-radius: 50px;
+}
+.Opta-Wide .Opta_F_CB .Opta-CheckBoxes.Opta-Nav li.Opta-On:hover{
+  background-color: #FF550F;
+}
+.Opta-Wide .Opta_F_CB .Opta-CheckBoxes.Opta-Nav li.Opta-On, .Opta-Wide .Opta_F_CB .Opta-CheckBoxes.Opta-Nav li:hover{
+  background-color: #ff550f;
+}
+.Opta .Opta-Nav li{
+  border: none;
+}
+.Opta .Opta-Stat .Opta-Value{
+  color: #FF550F;
+}
+.Opta .Opta_F_CS_N .Opta-stats-active .Opta-Label:after{
+  color: #ff550f;
+}
+.Opta .Opta-H3, .Opta h3{
+  background: #ff550f;
+  color: #fff;
+}
+.Opta .Opta-H4, .Opta h4{
+  background: #ff550f;
+  color: #fff;
+}
+.Opta tfoot th, .Opta thead th{
+  background: #FF550F;
+  color:#fff;
+}
