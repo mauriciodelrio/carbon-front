@@ -6,9 +6,6 @@ import { Card, CardImg, CardText, CardBody,
 CardTitle, CardSubtitle } from 'reactstrap';
 
 class Landing extends Component {
-  componentWillMount() {
-    console.log('holi');
-  }
   
   handleScrollToElement = (element) => { // element = ID of element.
     scroller.scrollTo(element, {

@@ -5,17 +5,20 @@ import createHistory from 'history/createBrowserHistory';
 import _ from 'lodash';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
+import moment from 'moment';
 import { getStore } from './store';
 import { loadState, saveState } from './localStore';
 
 import Login from './pages/Login';
 import Footer from './pages/Footer';
+import Ranking from './pages/Ranking';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
 import Buscar from './pages/Buscar';
 import Cuenta from './pages/Cuenta';
 import HandleError from './pages/Error';
+import GestionUsuarios from './pages/GestionUsuarios';
+import GestionMaterial from './pages/GestionMaterial';
 
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 const muiTheme = getMuiTheme({
@@ -50,7 +53,8 @@ store.subscribe(() => saveState({
 }));
 
 const Main = (props) => {
-  const isLoggedIn = props.user.user_state;
+  const session = _.get(props, 'user.session', false)
+  const isLoggedIn =  session && moment().format('DD-MM-YYYY hh:mm:ss') <= moment(props.user.session.session_expired_at).format('DD-MM-YYYY hh:mm:ss');
   return (
     <Router history={history}>
       <div className="flex-footer">
@@ -62,7 +66,10 @@ const Main = (props) => {
                   <Route path="/login" component={Login} />
                   <Route path="/home" component={Home} />
                   <Route path="/error" component={HandleError} />
-                  <Route path="/buscar" component={Buscar} />
+                  <Route path="/search" component={Buscar} />
+                  <Route path="/ranking" component={Ranking} />
+                  <Route path="/users" component={GestionUsuarios} />
+                  <Route path="/materials" component={GestionMaterial} />
                   <Route exact path="/" component={Landing} />
                 </Switch>
               </div>
@@ -72,12 +79,13 @@ const Main = (props) => {
               <Route exact path="/" component={Landing} />
               <Route path="/error" component={HandleError} />
               <Route path="/login" component={Login} />
+              <Route component={Landing} />
             </Switch>
           )}
         </div>
         <footer>
           <Route component={Footer} />
-        </footer>
+        </footer> 
       </div>
     </Router>
   );
