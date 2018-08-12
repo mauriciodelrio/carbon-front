@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Container, Table, Row } from 'reactstrap';
 import NavCarbon from '../components/NavCarbon';
+import InstitutionBox from '../components/InstitutionBox';
 import { performGetInstitutions } from './../actions/institutions';
 
-class Ranking extends Component {
+class Carpetas extends Component {
   componentWillMount() {
     this.props.getInstitutions();
   }
@@ -16,30 +17,8 @@ class Ranking extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
-        <h1> Ranking Universidades </h1>
-        <Table responsive>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Cantidad de contribuciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              _.map(this.props.institutions, function(o) {
-                return (
-                  <tr>
-                    <td>{o.institution_name}</td>
-                    <td>{o.institution_points}</td>
-                  </tr>
-                );
-              })
-            }
-          </tbody>
-        </Table>
-        <Row>
-          <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="700" data-numposts="20"></div>
-        </Row>
+        <h1> Búsqueda por carpetas </h1>
+      <InstitutionBox />
       </Container>
       </div>
     );
@@ -59,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Ranking);
+export default connect(mapStateToProps, mapDispatchToProps)(Carpetas);

@@ -45,4 +45,30 @@ export default class CarbonAPI {
       method: 'GET',
     }).then((resp) => resp.data);
   }
+  get_departaments_by_institution(payload) {
+    const url = `${this.uri}/api/departaments/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+  get_careers_by_departament(payload) {
+    const url = `${this.uri}/api/careers/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
+  get_courses_by_career(payload) {
+    const url = `${this.uri}/api/courses/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
+  get_career_by_id(payload) {
+    const url = `${this.uri}/api/career/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
 }

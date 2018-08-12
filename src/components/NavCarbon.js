@@ -15,7 +15,7 @@ class NavCarbon extends Component {
           <img className="img-fluid logo-carbon" src={require('../assets/img/carbon_logo_ico.svg')} alt="carbon" />
           </NavItem>
           <NavItem>
-            <NavLink href="/search" className="link-bar"><i className="fa fa-folder-open fa-3x color-ico" aria-hidden="true" />Búsqueda por carpetas</NavLink>
+            <NavLink href="/folders" className="link-bar"><i className="fa fa-folder-open fa-3x color-ico" aria-hidden="true" />Búsqueda por carpetas</NavLink>
           </NavItem>
           {this.props.type === 'student' && 
           (<NavItem>

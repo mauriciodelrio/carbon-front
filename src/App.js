@@ -15,10 +15,13 @@ import Ranking from './pages/Ranking';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
 import Buscar from './pages/Buscar';
+import Carpetas from './pages/Carpetas';
 import Cuenta from './pages/Cuenta';
 import HandleError from './pages/Error';
 import GestionUsuarios from './pages/GestionUsuarios';
 import GestionMaterial from './pages/GestionMaterial';
+import DetalleCarrera from './pages/DetalleCarrera';
+import NuevoUsuario from './pages/NuevoUsuario';
 
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 const muiTheme = getMuiTheme({
@@ -67,9 +70,12 @@ const Main = (props) => {
                   <Route path="/home" component={Home} />
                   <Route path="/error" component={HandleError} />
                   <Route path="/search" component={Buscar} />
+                  <Route path="/folders" component={Carpetas} />
                   <Route path="/ranking" component={Ranking} />
                   <Route path="/users" component={GestionUsuarios} />
+                  <Route path="/user/new" component={NuevoUsuario} />
                   <Route path="/materials" component={GestionMaterial} />
+                  <Route path="/:ins_id/:dept_id/career/:career_id" component={DetalleCarrera} />
                   <Route exact path="/" component={Landing} />
                 </Switch>
               </div>

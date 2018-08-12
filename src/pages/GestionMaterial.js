@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Container, Table, Row } from 'reactstrap';
 import NavCarbon from '../components/NavCarbon';
-import { performGetInstitutions } from './../actions';
+import { performGetInstitutions } from './../actions/institutions';
 
 class Ranking extends Component {
   componentWillMount() {
