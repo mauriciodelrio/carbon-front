@@ -21,6 +21,7 @@ class CareerBox extends Component {
           return (
             <div>
               <Button color="link" onClick={() => this.props.goToRoute(`${this.props.institution_id}/${this.props.departament_id}/career/${c.career_id}`)} style={{ marginBottom: '1rem' }}>
+                <i class="fa fa-folder-open fa-2x color-ico-open" aria-hidden="true"></i>
                 {c.career_name}
               </Button>
             </div>

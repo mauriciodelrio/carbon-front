@@ -13,6 +13,7 @@ let NewUserForm = props => { // eslint-disable-line
   return (
     <Form onSubmit={handleSubmit}>
       <h1>Nuevo Usuario</h1>
+      <br/>
       <FormGroup>
         <Label for="exampleEmail"> Email </Label>
         <Field className="form-control" type="email" name="email" placeholder="Email" component="input" />
@@ -30,7 +31,9 @@ let NewUserForm = props => { // eslint-disable-line
         {errorStatus && (<Label for="exampleError" style={{ color: 'red' }}>{errorMessage} ({errorStatus})</Label>)}
       </FormGroup>
       {isFetching ? <RenderLoading /> : (
-        <Button color="primary" size="lg" block className="btn-login">Añadir nuevo usuario</Button>
+        <div align="center">
+        <Button color="primary" size="lg" block className="btn-new-user">Añadir Nuevo Usuario</Button>
+        </div>
       )}
     </Form>
   );

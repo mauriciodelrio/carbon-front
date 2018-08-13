@@ -24,22 +24,22 @@ class GestionUsuarios extends Component {
             <Col sm="4">
               <Card body>
                 <CardTitle>Cargar usuario</CardTitle>
-                <CardText><i className="fas fa-user-plus fa-4x color-ico" aria-hidden="true" /></CardText>
-                <Link to={'/user/new'} ><button className="btn" >Seleccionar</button></Link>
+                <CardText><i className="fas fa-user-plus fa-4x color-ico-usu" aria-hidden="true" /></CardText>
+                <Link to={'/user/new'}><button className="btn btn-select">Seleccionar</button></Link>
               </Card>
             </Col>
             <Col sm="4">
               <Card body>
                 <CardTitle>Cargar CSV usuarios</CardTitle>
-                <CardText><i className="fas fa-users fa-4x color-ico" aria-hidden="true" /></CardText>
-                <Link to={'/user/new/csv'} ><button className="btn" >Seleccionar</button></Link>
+                <CardText><i className="fas fa-users fa-4x color-ico-usu" aria-hidden="true" /></CardText>
+                <Link to={'/user/new/csv'} ><button className="btn btn-select" >Seleccionar</button></Link>
               </Card>
             </Col>
             <Col sm="4">
               <Card body>
                 <CardTitle>Cambiar estado usuario</CardTitle>
-                <CardText><i className="fas fa-user-edit fa-4x color-ico" aria-hidden="true" /></CardText>
-                <Link to={'/user/edit'} ><button className="btn" >Seleccionar</button></Link>
+                <CardText><i className="fas fa-user-edit fa-4x color-ico-usu" aria-hidden="true" /></CardText>
+                <Link to={'/user/edit'} ><button className="btn btn-select" >Seleccionar</button></Link>
               </Card>
             </Col>
           </Row>
