@@ -89,7 +89,6 @@ Login
   cursor: pointer;
   font-size: 1.4rem;
   height: 65px;
-  weight: 2px;
   margin-bottom: 10px;
   padding: 15px;
   text-transform: uppercase;
@@ -2854,13 +2853,11 @@ footer {
 }
 .nav-carbon {
   background-color: #D55677;
-  height: 10vh;
-  margin-bottom: 50px;
+  height: 9vh;
 }
 .logo-carbon {
   height: 5vw;
   padding-left: 20px;
-  margin-top: -8px;
 }
 .justify-right {
   justify-content: right;
@@ -2882,39 +2879,4 @@ footer {
 }
 .color-carbon {
   color: #D55677;
-}
-.nav-item {
-  margin-top: 9px;
-}
-.color-ico-usu {
-  color: black;
-}
-.btn-select {
-  color: #fff;
-  background-color: #D55677;
-}
-.btn-new-user {
-  background-color: #D55677;
-  border-color: #D55677;
-  cursor: pointer;
-  font-size: 1rem;
-  height: 50px;
-  width: 220px;
-  margin-bottom: 10px;
-  margin: 50px;
-  padding: 15px;
-  text-align: center;
-}
-
-.btn-new-user:hover {
-  background-color: #D55677;
-  border-color: #D55677;
-  cursor: pointer;
-  font-size: 1rem;
-  height: 50px;
-  width: 220px;
-  margin-bottom: 10px;
-  margin: 50px;
-  padding: 15px;
-  text-align: center;
 }

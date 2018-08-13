@@ -48,15 +48,15 @@ class DetalleCarrera extends Component {
           </thead>
           <tbody>
             {
-              _.map(_.get(courses, `${this.props.match.params.career_id}.data`, []), function(o) {
+              _.map(_.get(courses, `${this.props.match.params.career_id}.data`, []), (o) => {
                 return (
                   <tr>
                     <td>{o.course_name}</td>
                     <td>{o.description}</td>
                     <td>
-                      <Button color="link" onClick={() => this.props.goToRoute(`career/${this.props.match.params.career_id}/course/${o.course_id}/materials`)}>
+                      <a color="link" onClick={() => this.props.goToRoute(`/career/${this.props.match.params.career_id}/course/${o.course_id}/materials`)}>
                         Ver Contenido
-                      </Button>
+                      </a>
                     </td>
                   </tr>
                 );
@@ -89,6 +89,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(performCareerById(payload));
   },
   goToRoute: (payload) => {
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", payload)
     dispatch(push(payload));
   }
 });

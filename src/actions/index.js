@@ -88,6 +88,7 @@ export const performLogout = () => (dispatch, getState, api) => {
 };
 
 export const goToRoute = (route, id = '', payload = {}) => (dispatch) => {
+  console.log("routee", route)
   dispatch(push(`/${route}/${id}`, payload));
 };
 
