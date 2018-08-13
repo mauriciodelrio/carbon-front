@@ -15,7 +15,7 @@ const getStore = (store, history) => createStore(getRootReducer(routerReducer), 
   applyMiddleware(thunk.withExtraArgument(Api)),
   applyMiddleware(logger),
   applyMiddleware(errorTracker()),
-  applyMiddleware(routerMiddleware(history))
+  applyMiddleware(routerMiddleware(history)),
 ));
 
 export { getStore };

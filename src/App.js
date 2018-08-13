@@ -21,6 +21,7 @@ import HandleError from './pages/Error';
 import GestionUsuarios from './pages/GestionUsuarios';
 import GestionMaterial from './pages/GestionMaterial';
 import DetalleCarrera from './pages/DetalleCarrera';
+import DetalleMateriales from './pages/DetalleMateriales';
 import NuevoUsuario from './pages/NuevoUsuario';
 
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
@@ -67,7 +68,7 @@ const Main = (props) => {
               <div className="content">
                 <Switch>
                   <Route path="/login" component={Login} />
-                  <Route path="/home" component={Home} />
+                  <Route exact path="/home" component={Home} />
                   <Route path="/error" component={HandleError} />
                   <Route path="/search" component={Buscar} />
                   <Route path="/folders" component={Carpetas} />
@@ -75,7 +76,8 @@ const Main = (props) => {
                   <Route path="/users" component={GestionUsuarios} />
                   <Route path="/user/new" component={NuevoUsuario} />
                   <Route path="/materials" component={GestionMaterial} />
-                  <Route path="/:ins_id/:dept_id/career/:career_id" component={DetalleCarrera} />
+                  <Route exact path="/:ins_id/:dept_id/career/:career_id" component={DetalleCarrera} />
+                  <Route exact path="/career/:career_id/course/:course_id/materials" component={DetalleMateriales} />
                   <Route exact path="/" component={Landing} />
                 </Switch>
               </div>

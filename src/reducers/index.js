@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import user from "./user";
 import institutions from "./institutions";
 import departaments from "./departaments";
 import careers from "./careers";
+import materials from "./materials";
 import currentCareer from "./currentCareer"
+import currentCourse from "./currentCourse"
 import courses from "./courses"
 
 const getRootReducer = () => combineReducers({
@@ -14,7 +15,9 @@ const getRootReducer = () => combineReducers({
   departaments,
   careers,
   courses,
+  materials,
   currentCareer,
+  currentCourse,
   form: formReducer,
 });  
 
