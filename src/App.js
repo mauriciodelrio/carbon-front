@@ -22,6 +22,7 @@ import GestionUsuarios from './pages/GestionUsuarios';
 import GestionMaterial from './pages/GestionMaterial';
 import DetalleCarrera from './pages/DetalleCarrera';
 import DetalleMateriales from './pages/DetalleMateriales';
+import Material from "./pages/Material"
 import NuevoUsuario from './pages/NuevoUsuario';
 
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
@@ -78,6 +79,7 @@ const Main = (props) => {
                   <Route path="/materials" component={GestionMaterial} />
                   <Route exact path="/:ins_id/:dept_id/career/:career_id" component={DetalleCarrera} />
                   <Route exact path="/career/:career_id/course/:course_id/materials" component={DetalleMateriales} />
+                  <Route exact path="/course/:course_id/material/:material_id" component={Material} />
                   <Route exact path="/" component={Landing} />
                 </Switch>
               </div>

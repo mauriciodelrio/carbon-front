@@ -85,4 +85,11 @@ export default class CarbonAPI {
       method: 'GET',
     }).then((resp) => resp.data);
   }
+
+  get_material_by_id(payload) {
+    const url = `${this.uri}/api/material/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
 }

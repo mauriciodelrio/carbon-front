@@ -7,6 +7,7 @@ import careers from "./careers";
 import materials from "./materials";
 import currentCareer from "./currentCareer"
 import currentCourse from "./currentCourse"
+import currentMaterial from "./currentMaterial"
 import courses from "./courses"
 
 const getRootReducer = () => combineReducers({
@@ -18,6 +19,7 @@ const getRootReducer = () => combineReducers({
   materials,
   currentCareer,
   currentCourse,
+  currentMaterial,
   form: formReducer,
 });  
 
