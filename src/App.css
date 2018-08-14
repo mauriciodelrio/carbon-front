@@ -2877,6 +2877,9 @@ footer {
 .center {
   text-align: center;
 }
+.center-h-v {
+  justify-content: center;
+}
 .color-carbon {
   color: #D55677;
 }
