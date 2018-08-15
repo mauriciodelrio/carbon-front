@@ -14,7 +14,18 @@ class NuevoUsuario extends Component {
   }
 
   submit = (payload) => {
-    this.props.createUser(payload);
+    console.log("payload submit", payload)
+    const { institution_id } = this.props.user;
+    const values = {
+      lastname: payload.lastname,
+      birthday: payload.birthdate,
+      gender: payload.gender,
+      name: payload.name,
+      password: payload.password,
+      email: payload.email,
+      institution_id: institution_id
+    }
+    this.props.createUser(values);
   }
   onChangeDate = date => this.setState({ date })
 

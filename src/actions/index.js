@@ -2,6 +2,8 @@ import _ from 'lodash';
 import { push } from 'react-router-redux';
 import { setAccessKeys, deleteAccessKeys } from '../lib/storage';
 import { accentsTidy, wordsTidy } from '../lib/lib';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const getData = (type, data = {}) => ({
   type,
@@ -48,8 +50,37 @@ export const performLogin = (payload) => (dispatch, getState, api) => {
 };
 
 export const performCreateUser = (payload) => (dispatch, getState, api) => {
-  console.log("params create user aaa", payload)
+  api.create_user(payload).then((resp) =>{
+    toast.success("Usuario cargado con éxito");
+    console.log("toasttttt", toast);
+    dispatch(push('/users'));
+  }).catch((err) => {
+    toast.error("Ocurrió un error con el servidor, intente más tarde");
+    dispatch(push('/users'));
+  })
 };
+
+export const performEditUser = (payload) => (dispatch, getState, api) => {
+  dispatch(getData('FIND_USER'));
+  api.find_user(payload).then((resp) =>{
+    console.log("finddddddddd", resp );
+    dispatch(getDataSuccess(resp.data.data, 'FIND_USER_SUCCESS'));
+  }).catch((err) => {
+    toast.error("Ocurrió un error con el servidor, intente más tarde");
+    dispatch(getDataFailure(_.get(err, 'response.data', {}), 'FIND_USER_ERROR'));
+  })
+};
+
+export const performChangeStateUser = (payload) => (dispatch, getState, api) => {
+  api.change_state_user(payload).then((resp) =>{
+    toast.success("Cambio de estado con éxito");
+    dispatch(push('/users'));
+  }).catch((err) => {
+    toast.error("Ocurrió un error con el servidor, intente más tarde");
+    dispatch(push('/users'));
+  })
+};
+
 
 export const performGetTypeUser = (payload) => (dispatch, getState, api) => {
   dispatch(getData('GET_TYPE_USER'));

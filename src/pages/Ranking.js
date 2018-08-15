@@ -37,9 +37,6 @@ class Ranking extends Component {
             }
           </tbody>
         </Table>
-        <Row>
-          <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="700" data-numposts="20"></div>
-        </Row>
       </Container>
       </div>
     );
