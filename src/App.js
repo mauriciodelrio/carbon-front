@@ -8,6 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import moment from 'moment';
 import { getStore } from './store';
 import { loadState, saveState } from './localStore';
+import { ToastContainer } from 'react-toastify'
 
 import Login from './pages/Login';
 import Footer from './pages/Footer';
@@ -24,7 +25,8 @@ import DetalleCarrera from './pages/DetalleCarrera';
 import DetalleMateriales from './pages/DetalleMateriales';
 import Material from "./pages/Material"
 import NuevoUsuario from './pages/NuevoUsuario';
-
+import EditarUsuario from './pages/EditarUsuario';
+import NuevoUsuarioCSV from './pages/NuevoUsuarioCSV';
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 const muiTheme = getMuiTheme({
   stepper: {
@@ -63,6 +65,7 @@ const Main = (props) => {
   return (
     <Router history={history}>
       <div className="flex-footer">
+        <ToastContainer />
         <div className="content" >
           {isLoggedIn ? (
             <div>
@@ -75,6 +78,8 @@ const Main = (props) => {
                   <Route path="/folders" component={Carpetas} />
                   <Route path="/ranking" component={Ranking} />
                   <Route path="/users" component={GestionUsuarios} />
+                  <Route path="/user/edit" component={EditarUsuario} />
+                  <Route path="/user/new/csv" component={NuevoUsuarioCSV} />
                   <Route path="/user/new" component={NuevoUsuario} />
                   <Route path="/materials" component={GestionMaterial} />
                   <Route exact path="/:ins_id/:dept_id/career/:career_id" component={DetalleCarrera} />

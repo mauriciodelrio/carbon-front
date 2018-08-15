@@ -3,6 +3,7 @@ const initialState = { hasData: false, hasError: false, isLoading: false, data: 
 export default function user(state = initialState, action) {
   switch (action.type) {
     // Indicate loading state without deleting previous data
+  
     case "GET_AUTH":
       return Object.assign({}, state, {
         isLoading: true
