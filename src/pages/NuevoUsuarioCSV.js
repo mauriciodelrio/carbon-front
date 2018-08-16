@@ -6,6 +6,7 @@ import _ from 'lodash';
 import { performLoadCsv } from './../actions';
 import NavCarbon from '../components/NavCarbon';
 import CSVReader from "react-csv-reader";
+import { push } from 'react-router-redux';
 
 class NuevoUsuarioCSV extends Component {
   constructor(props) {
@@ -29,8 +30,8 @@ class NuevoUsuarioCSV extends Component {
   }
 
   submit = (payload) => {
-    console.log("payload submit", this.state.register)
     this.props.loadCsv(this.state.register);
+    this.props.goToRoute(`/user/new/csv/confirm`);
   }
 
   render() {
@@ -134,6 +135,9 @@ const mapDispatchToProps = dispatch => ({
   loadCsv: (payload) => {
     dispatch(performLoadCsv(payload));
   },
+  goToRoute: (payload) => {
+    dispatch(push(payload));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NuevoUsuarioCSV);

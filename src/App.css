@@ -2878,6 +2878,7 @@ footer {
   text-align: center;
 }
 .center-h-v {
+  display: flex;
   justify-content: center;
 }
 .color-carbon {

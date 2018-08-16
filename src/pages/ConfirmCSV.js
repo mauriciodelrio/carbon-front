@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Row, Col} from 'reactstrap';
+import { Container, Row, Col, Button} from 'reactstrap';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import NavCarbon from '../components/NavCarbon';
+import { push } from 'react-router-redux';
 
 class ConfirmCSV extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class ConfirmCSV extends Component {
     console.log(isLoading, hasError);
     const { user_name } = this.props.user;
     const { type } = this.props.type_user;
-    const errors = _.get(this.props.materials_err, 'data', null);
+    const errors = _.get(this.props.userError, 'data', null);
     return (
       <div>
         <NavCarbon user={user_name || null} type={type}></NavCarbon>
@@ -60,10 +61,15 @@ class ConfirmCSV extends Component {
           :
           <Container>
             <Row>
-              <h1> No se han subido registros con errores </h1>
+              <h1> Los registros se han cargado exitosamente </h1>
             </Row>
           </Container>
           }
+        </Container>
+        <Container>
+          <div className="center-h-v">
+            <Button size="lg" onClick={() => this.props.goToRoute(`/users`)}> Volver </Button>
+          </div>
         </Container>
       </div>
     );
@@ -74,10 +80,14 @@ const mapStateToProps = (state) => ({
   user: _.get(state, 'user.data.user', null),
   session: _.get(state, 'user.data.session', null),
   type_user: _.get(state, 'user.type', null),
-  materials_err: _.get(state, 'materials_err', null)
+  userError: _.get(state, 'userError', null)
 });
 
 const mapDispatchToProps = dispatch => ({
+  goToRoute: (payload) => {
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", payload)
+    dispatch(push(payload));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ConfirmCSV);

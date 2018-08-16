@@ -10,6 +10,7 @@ import currentCourse from "./currentCourse"
 import currentMaterial from "./currentMaterial"
 import courses from "./courses"
 import findUser from "./findUser"
+import userError from "./userError"
 const getRootReducer = () => combineReducers({
   user,
   institutions,
@@ -21,6 +22,7 @@ const getRootReducer = () => combineReducers({
   currentCourse,
   currentMaterial,
   findUser,
+  userError,
   form: formReducer,
 });  
 
