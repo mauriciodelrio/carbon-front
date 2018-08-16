@@ -2858,7 +2858,7 @@ footer {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center; 
+  align-items: center;
 }
 .logo-carbon {
   height: 5vw;
