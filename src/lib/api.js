@@ -46,6 +46,23 @@ export default class CarbonAPI {
     }).then((resp) => resp);
   }
 
+  create_user_csv(payload) {
+    const obj = {
+      user_name: payload[0],
+      user_lastname: payload[1],
+      user_mail: payload[5],
+      user_password: payload[6],
+      institution_id: payload[3],
+      user_gender: payload[2],
+      user_birthday: payload[4]
+    }
+    const url = `${this.uri}/api/student/new`;
+    return axios(url, {
+      method: 'POST',
+      data: obj,
+    }).then((resp) => resp);
+  }
+
   find_user(payload) {
     const url = `${this.uri}/api/users/find`;
     return axios(url, {

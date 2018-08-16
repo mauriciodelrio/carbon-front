@@ -27,6 +27,8 @@ import Material from "./pages/Material"
 import NuevoUsuario from './pages/NuevoUsuario';
 import EditarUsuario from './pages/EditarUsuario';
 import NuevoUsuarioCSV from './pages/NuevoUsuarioCSV';
+import ConfirmCSV from './pages/ConfirmCSV';
+
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 const muiTheme = getMuiTheme({
   stepper: {
@@ -79,6 +81,7 @@ const Main = (props) => {
                   <Route path="/ranking" component={Ranking} />
                   <Route path="/users" component={GestionUsuarios} />
                   <Route path="/user/edit" component={EditarUsuario} />
+                  <Route path="/user/new/csv/confirm" component={ConfirmCSV}/>
                   <Route path="/user/new/csv" component={NuevoUsuarioCSV} />
                   <Route path="/user/new" component={NuevoUsuario} />
                   <Route path="/materials" component={GestionMaterial} />

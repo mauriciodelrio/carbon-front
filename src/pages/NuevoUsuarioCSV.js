@@ -3,8 +3,7 @@ import { Container, Row, Col, Input, FormGroup, Button, Modal, ModalBody, ModalH
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
-import { performCreateUser } from './../actions';
-import NuevoUsuarioForm from './forms/NuevoUsuarioForm';
+import { performLoadCsv } from './../actions';
 import NavCarbon from '../components/NavCarbon';
 import CSVReader from "react-csv-reader";
 
@@ -30,7 +29,8 @@ class NuevoUsuarioCSV extends Component {
   }
 
   submit = (payload) => {
-    console.log("payload submit", payload)
+    console.log("payload submit", this.state.register)
+    this.props.loadCsv(this.state.register);
   }
 
   render() {
@@ -131,8 +131,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createUser: (payload) => {
-    dispatch(performCreateUser(payload));
+  loadCsv: (payload) => {
+    dispatch(performLoadCsv(payload));
   },
 });
 
