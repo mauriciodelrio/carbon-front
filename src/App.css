@@ -2853,7 +2853,12 @@ footer {
 }
 .nav-carbon {
   background-color: #D55677;
-  height: 9vh;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center; 
 }
 .logo-carbon {
   height: 5vw;
