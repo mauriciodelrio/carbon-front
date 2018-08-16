@@ -32,6 +32,7 @@ let NewUserForm = props => { // eslint-disable-line
         <Col md="3" xs="12">
           <FormGroup>
             <Label for="exampleEmail"> Género </Label>
+            <br/>
             <Field name="gender" component="select">
                 <option></option>
                 <option value="Male">Masculino</option>
