@@ -23,17 +23,15 @@ class Landing extends Component {
         <section className="landing-section" id="intro">
           <div className="container-fluid">
             <div className="row">
-              <div className="intro-left col-sm-6">
+              <div className="intro-left col-sm-10">
                 <img className="img-fluid logo" src={logo} alt="carbon" />
-                <h1>Material de estudios para tod@s</h1>
+                <h1> Material de estudios para tod@s</h1>
                 <h2>Tu red social educativa que te conecta con miles de estudiantes</h2>
                 <Link to={'/login'} ><button className="btn" >Ingresa acá</button></Link>
                 <h5>Colabora con tus apuntes</h5>
                 <h6>Miles de estudiantes agradecerán tu contenido</h6>
               </div>
-              <div className="intro-right col-sm-6">
-                <img className="img-fluid" src={require('../assets/img/wireframescarbon-05.png')} alt="carbon" />
-              </div>
+
             </div>
             <div className="intersection row">
               <i 
@@ -42,18 +40,13 @@ class Landing extends Component {
               />
             </div>
           </div>
-        </section>
-        <section className="landing-section" id="second">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-sm-6">
-                <img className="img-fluid" src={require('../assets/img/wireframescarbon-02.png')} alt="carbon" />
-              </div>
-              <div className="col-sm-6">
+              <div className="col-sm-9">
                 <h1><i className="fa fa-search" aria-hidden="true" /> Busca Material</h1>
                 <h5>Según las categorías definidas en carbon.</h5>
                 <div className="right-elem">
-                  <h1> Filtra Contenido<i className="fa fa-filter" aria-hidden="true" /></h1>
+                  <h1> Filtra Contenido  <i className="fa fa-filter" aria-hidden="true" /></h1>
                   <h5>Utiliza palabras claves para acceder al material que buscas</h5>
                 </div>
                 <div className="left-elem">
