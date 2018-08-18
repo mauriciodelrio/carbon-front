@@ -28,6 +28,7 @@ import NuevoUsuario from './pages/NuevoUsuario';
 import EditarUsuario from './pages/EditarUsuario';
 import NuevoUsuarioCSV from './pages/NuevoUsuarioCSV';
 import ConfirmCSV from './pages/ConfirmCSV';
+import BuscarAvanzada from './pages/BuscarAvanzada';
 
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 const muiTheme = getMuiTheme({
@@ -76,6 +77,7 @@ const Main = (props) => {
                   <Route path="/login" component={Login} />
                   <Route exact path="/home" component={Home} />
                   <Route path="/error" component={HandleError} />
+                  <Route path="/advanced-search" component={BuscarAvanzada} />
                   <Route path="/search" component={Buscar} />
                   <Route path="/folders" component={Carpetas} />
                   <Route path="/ranking" component={Ranking} />

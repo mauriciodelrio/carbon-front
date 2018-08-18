@@ -50,7 +50,7 @@ export default class CarbonAPI {
     const obj = {
       user_name: payload[0],
       user_lastname: payload[1],
-      user_mail: payload[5],
+      user_email: payload[5],
       user_password: payload[6],
       institution_id: payload[3],
       user_gender: payload[2],
