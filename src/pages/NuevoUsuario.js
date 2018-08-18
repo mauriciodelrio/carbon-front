@@ -17,12 +17,12 @@ class NuevoUsuario extends Component {
     console.log("payload submit", payload)
     const { institution_id } = this.props.user;
     const values = {
-      lastname: payload.lastname,
-      birthday: payload.birthdate,
-      gender: payload.gender,
-      name: payload.name,
-      password: payload.password,
-      email: payload.email,
+      user_lastname: payload.lastname,
+      user_birthday: payload.birthdate,
+      user_gender: payload.gender,
+      user_name: payload.name,
+      user_password: payload.password,
+      user_email: payload.email,
       institution_id: institution_id
     }
     this.props.createUser(values);

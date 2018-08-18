@@ -60,6 +60,19 @@ export const performCreateUser = (payload) => (dispatch, getState, api) => {
   })
 };
 
+export const performLoadCsv = (payload) => (dispatch, getState, api) => {
+  _.map(payload, (o) => {
+    dispatch(getData('LOAD_USER_CSV'));
+    api.create_user_csv(o).then((resp) =>{
+      dispatch(getDataSuccess(resp, 'LOAD_USER_CSV_SUCCESS'));
+      toast.success("Usuario cargado con éxito");
+    }).catch((err) => {
+      dispatch(getDataFailure(o, 'LOAD_USER_CSV_ERROR'));
+      toast.error("Ocurrió un error con el servidor, intente más tarde");
+    })
+  })
+};
+
 export const performEditUser = (payload) => (dispatch, getState, api) => {
   dispatch(getData('FIND_USER'));
   api.find_user(payload).then((resp) =>{
