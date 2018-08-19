@@ -17,7 +17,7 @@ let FindMaterialForm = props => { // eslint-disable-line
         <Col md="4" xs="12">
           <FormGroup>
             <Label for="nombre"> Buscar material </Label>
-            <Field className="form-control" type="text" name="email" placeholder="Escriba alguna palabra o coincidencia" component="input" />
+            <Field className="form-control" type="text" name="word" placeholder="Escriba alguna palabra o coincidencia" component="input" />
           </FormGroup>
         </Col>
         <Col md="2" xs="12">
@@ -25,9 +25,9 @@ let FindMaterialForm = props => { // eslint-disable-line
             <Label for="nombre"> Categoría </Label>
             <Field name="category" component="select">
                 <option></option>
-                <option value="Male">Masculino</option>
-                <option value="Female">Femenino</option>
-                <option value="Other">Otro</option>
+                {_.map(categories, (c) =>
+                  <option value={c.category_id}>{c.category_name}</option>
+                )}
               </Field>
           </FormGroup>
         </Col>
@@ -36,9 +36,9 @@ let FindMaterialForm = props => { // eslint-disable-line
             <Label for="nombre"> Tipo de material </Label>
             <Field name="type" component="select">
                 <option></option>
-                <option value="Male">Masculino</option>
-                <option value="Female">Femenino</option>
-                <option value="Other">Otro</option>
+                {_.map(types, (t) =>
+                  <option value={t.typematerial_id}>{t.typematerial_name}</option>
+                )}
               </Field>
           </FormGroup>
         </Col>
@@ -47,9 +47,9 @@ let FindMaterialForm = props => { // eslint-disable-line
             <Label for="nombre"> Palabra clave </Label>
             <Field name="keyword" component="select">
                 <option></option>
-                <option value="Male">Masculino</option>
-                <option value="Female">Femenino</option>
-                <option value="Other">Otro</option>
+                {_.map(keywords, (k) =>
+                  <option value={k.keyword_id}>{k.keyword_name}</option>
+                )}
               </Field>
           </FormGroup>
         </Col>

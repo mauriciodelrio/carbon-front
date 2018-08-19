@@ -93,6 +93,27 @@ export default class CarbonAPI {
     }).then((resp) => resp.data);
   }
 
+  get_categories() {
+    const url = `${this.uri}/api/categories/all`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
+  get_types() {
+    const url = `${this.uri}/api/typematerials/all`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
+  get_keywords() {
+    const url = `${this.uri}/api/keywords/all`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
   get_departaments_by_institution(payload) {
     const url = `${this.uri}/api/departaments/${payload}`;
     return axios(url, {
@@ -137,6 +158,31 @@ export default class CarbonAPI {
 
   get_material_by_id(payload) {
     const url = `${this.uri}/api/material/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
+  get_material_by_string(payload) {
+    const url = `${this.uri}/api/materials/search?name=${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+  get_material_by_category(payload) {
+    const url = `${this.uri}/api/materials/category/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+  get_material_by_type(payload) {
+    const url = `${this.uri}/api/materials/typematerial/${payload}`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+  get_material_by_keyword(payload) {
+    const url = `${this.uri}/api/materials/keyword/${payload}`;
     return axios(url, {
       method: 'GET',
     }).then((resp) => resp.data);
