@@ -43,7 +43,7 @@ export default class CarbonAPI {
     return axios(url, {
       method: 'POST',
       data: payload,
-    }).then((resp) => resp);
+    }).then((resp) => resp.data);
   }
 
   create_user_csv(payload) {
@@ -60,7 +60,7 @@ export default class CarbonAPI {
     return axios(url, {
       method: 'POST',
       data: obj,
-    }).then((resp) => resp);
+    }).then((resp) => resp.data);
   }
 
   find_user(payload) {
@@ -160,6 +160,21 @@ export default class CarbonAPI {
     const url = `${this.uri}/api/material/${payload}`;
     return axios(url, {
       method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
+  get_materials() {
+    const url = `${this.uri}/api/materials/all`;
+    return axios(url, {
+      method: 'GET',
+    }).then((resp) => resp.data);
+  }
+
+  change_state_material(payload) {
+    const url = `${this.uri}/api/material/${payload.material_id}/edit`;
+    return axios(url, {
+      method: 'POST',
+      data: payload,
     }).then((resp) => resp.data);
   }
 

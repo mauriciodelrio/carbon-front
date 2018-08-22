@@ -7,7 +7,7 @@ import renderDatePicker from '../../components/DatePicker';
 
 let NewUserForm = props => { // eslint-disable-line
   const { handleSubmit, isFetching, loginError, onChangeDate, currDate } = props;
-  const errorMessage = _.get(loginError, 'message', false);
+  let errorMessage = _.get(loginError, 'message', false);
   const errorStatus = _.get(loginError, 'status', false);
   console.log("state in componenttttt", props);
   return (
@@ -62,8 +62,8 @@ let NewUserForm = props => { // eslint-disable-line
       <Row>
         <Col md="6" xs="12">
           <FormGroup>
-            <Label for="exampleEmail"> Email </Label>
-            <Field className="form-control" type="email" name="email" placeholder="Email" component="input" />
+            <Label for="estudiante"> Email </Label>
+            <Field className="form-control" type="text" name="email" placeholder="Email" component="input" value />
           </FormGroup>
         </Col>
         <Col md="6" xs="12">

@@ -30,19 +30,6 @@ class BuscarAvanzada extends Component {
     this.props.searchMaterial(payload);
   }
 
-  match_materials = (find_material) => {
-    let params = this.state.params;
-    let r = find_material.map( async (o) => {
-      if(_.get(params, 'category', o.category_id) === o.category_id && _.get(params, 'keyword', o.keyword_id) === o.keyword_id && _.get(params, 'type', o.typematerial_id) === o.typematerial_id  && (_.includes(o.name, _.get(params, 'word', o.name)) || _.includes(o.description, _.get(params, 'word', o.description)))) {
-        console.log("aaaaaaaaaaaaaaaaaaaaaaa", o);
-        return o;
-      }
-      })
-    Promise.all(r).then((r) =>{
-      return r
-    })
-  }
-
   render() {
     const { isLoading, hasError } = _.get(this.props, 'user', {});
     console.log(isLoading, hasError);
@@ -81,7 +68,7 @@ class BuscarAvanzada extends Component {
                   return o;
                 }
                 }), 'name'), (o) =>{
-                console.log("oooooooooooooooooooooooooooooooooooooo", o);
+                console.log("ooooooooooooooooooooooooooooooo", o);
                 if(o) {
                   return (
                     <Row>
@@ -98,7 +85,7 @@ class BuscarAvanzada extends Component {
                         <Button onClick={() => this.props.goToRoute(`/course/${o.course_id}/material/${o.material_id}`)}>Ver detalle</Button>
                       </Col>
                     </Row>
-                    )
+                  )
                 }
               })
             }

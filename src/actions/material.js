@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { push } from 'react-router-redux';
-import { setAccessKeys, deleteAccessKeys } from '../lib/storage';
-import { accentsTidy, wordsTidy } from '../lib/lib';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const getData = (type, data = {}) => ({
   type,
@@ -153,6 +153,45 @@ export const performMaterialById = (payload) => (dispatch, getState, api) => {
   }).catch((err) => {
     console.log("err", err)
     dispatch(getDataFailure(_.get(err, 'response.data', {}), 'GET_MATERIAL_BY_ID_ERROR'));
+  });
+}
+
+export const performGetMaterials = () => (dispatch, getState, api) => {
+  dispatch(getData('GET_ALL_MATERIALS'));
+  api.get_materials().then((resp) => {
+    console.log('resp material' , resp);
+    const { status = 400 } = resp;
+    const dataInfo = resp.data;
+    console.log(status, typeof status);
+    switch (status) {
+      case 'OK':
+      {
+        console.log("entro en OKKKK materials", dataInfo);
+        dispatch(getDataSuccess(dataInfo, 'GET_ALL_MATERIALS_SUCCESS'));
+        break;
+      }
+      default:
+      {
+        console.log("entro a default", resp);
+        dispatch(getDataFailure({ status }, 'GET_ALL_MATERIALS_ERROR'));
+        break;
+      }
+    }
+  }).catch((err) => {
+    console.log("err", err)
+    dispatch(getDataFailure(_.get(err, 'response.data', {}), 'GET_ALL_MATERIALS_ERROR'));
+  });
+}
+
+export const performChangeStateMaterial = (payload) => (dispatch, getState, api) => {
+  api.change_state_material(payload).then((resp) => {
+    console.log('resp change state material' , resp);
+    toast.success("Cambio de estado exitoso");
+    dispatch(push('/home'));
+  }).catch((err) => {
+    console.log("err", err)
+    toast.error("Ha ocurrido un error, intente más tarde");
+    dispatch(push('/home'));
   });
 }
 

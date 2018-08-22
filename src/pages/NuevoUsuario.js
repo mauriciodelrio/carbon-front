@@ -6,11 +6,18 @@ import _ from 'lodash';
 import { performCreateUser } from './../actions';
 import NuevoUsuarioForm from './forms/NuevoUsuarioForm';
 import NavCarbon from '../components/NavCarbon';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class NuevoUsuario extends Component {
   constructor(props) {
     super(props);
     this.state = { date: null };
+  }
+
+  validateEmail = (email) => {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
   submit = (payload) => {
@@ -25,7 +32,11 @@ class NuevoUsuario extends Component {
       user_email: payload.email,
       institution_id: institution_id
     }
-    this.props.createUser(values);
+    if (payload.email && this.validateEmail(payload.email)) {
+      this.props.createUser(values);
+    } else {
+      toast.warning("Ingrese un email válido")
+    }
   }
   onChangeDate = date => this.setState({ date })
 

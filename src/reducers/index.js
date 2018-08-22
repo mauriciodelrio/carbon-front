@@ -8,6 +8,7 @@ import keywords from "./keywords";
 import departaments from "./departaments";
 import careers from "./careers";
 import materials from "./materials";
+import allMaterials from "./allMaterials";
 import currentCareer from "./currentCareer"
 import currentCourse from "./currentCourse"
 import currentMaterial from "./currentMaterial"
@@ -26,6 +27,7 @@ const getRootReducer = () => combineReducers({
   careers,
   courses,
   materials,
+  allMaterials,
   currentCareer,
   currentCourse,
   currentMaterial,
