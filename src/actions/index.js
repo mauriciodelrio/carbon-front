@@ -51,9 +51,13 @@ export const performLogin = (payload) => (dispatch, getState, api) => {
 
 export const performCreateUser = (payload) => (dispatch, getState, api) => {
   api.create_user(payload).then((resp) =>{
-    toast.success("Usuario cargado con éxito");
-    console.log("toasttttt", toast);
-    dispatch(push('/users'));
+    if (resp.status === "EXIST") {
+      toast.warning(resp.data);
+    }
+    else {
+      toast.success("Usuario cargado con éxito");
+      dispatch(push('/users'));
+    }
   }).catch((err) => {
     toast.error("Ocurrió un error con el servidor, intente más tarde");
     dispatch(push('/users'));
@@ -64,8 +68,13 @@ export const performLoadCsv = (payload) => (dispatch, getState, api) => {
   _.map(payload, (o) => {
     dispatch(getData('LOAD_USER_CSV'));
     api.create_user_csv(o).then((resp) =>{
-      dispatch(getDataSuccess(resp, 'LOAD_USER_CSV_SUCCESS'));
-      toast.success("Usuario cargado con éxito");
+      if (resp.status === "EXIST") {
+        toast.warning(resp.data);
+        dispatch(getDataFailure(o, 'LOAD_USER_CSV_ERROR'));
+      } else {
+        dispatch(getDataSuccess(resp, 'LOAD_USER_CSV_SUCCESS'));
+        toast.success("Usuario cargado con éxito");
+      }
     }).catch((err) => {
       dispatch(getDataFailure(o, 'LOAD_USER_CSV_ERROR'));
       toast.error("Ocurrió un error con el servidor, intente más tarde");

@@ -86,7 +86,7 @@ const Main = (props) => {
                   <Route path="/user/new/csv/confirm" component={ConfirmCSV}/>
                   <Route path="/user/new/csv" component={NuevoUsuarioCSV} />
                   <Route path="/user/new" component={NuevoUsuario} />
-                  <Route path="/materials" component={GestionMaterial} />
+                  <Route path="/admin-materials" component={GestionMaterial} />
                   <Route exact path="/:ins_id/:dept_id/career/:career_id" component={DetalleCarrera} />
                   <Route exact path="/career/:career_id/course/:course_id/materials" component={DetalleMateriales} />
                   <Route exact path="/course/:course_id/material/:material_id" component={Material} />

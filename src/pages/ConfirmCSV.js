@@ -21,8 +21,9 @@ class ConfirmCSV extends Component {
         <NavCarbon user={user_name || null} type={type}></NavCarbon>
         <Container>
           <h1>Confirmación de carga</h1>
-          {errors ?
+          {errors.length > 0 ?
           <div>
+            <h4>Los siguientes registros contienen errores</h4>
             <Row>
               <Col md="3" xs="12">
                 <h3>Nombre</h3>
@@ -61,7 +62,7 @@ class ConfirmCSV extends Component {
           :
           <Container>
             <Row>
-              <h1> Los registros se han cargado exitosamente </h1>
+              <h4> Los registros se han cargado exitosamente </h4>
             </Row>
           </Container>
           }

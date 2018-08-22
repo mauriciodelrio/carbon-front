@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import _ from 'lodash';
+import _ from 'lodash';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import { performLogout } from './../actions';
 
 class NavCarbon extends Component {
   render() {
     console.log(this.props);
+    const { isLoading, hasError } = _.get(this.props, 'user', {});
+    console.log(isLoading, hasError);
+    const { user_name, user_lastname } = this.props.user;
     console.log("state in navCarbon", this.props);
     return (
       <div>
@@ -29,7 +32,7 @@ class NavCarbon extends Component {
           }
           {this.props.type === 'editor' && 
           (<NavItem>
-            <NavLink href="/materials" className="link-bar"><i className="fas fa-key fa-2x color-ico" aria-hidden="true" />Gestionar material</NavLink>
+            <NavLink href="/admin-materials" className="link-bar"><i className="fas fa-key fa-2x color-ico" aria-hidden="true" />Gestionar material</NavLink>
           </NavItem>)
           }
           <NavItem>
@@ -40,7 +43,7 @@ class NavCarbon extends Component {
           </NavItem>
           <Nav className="justify-content-end">
             <NavItem>
-              <NavLink href="/login" className="link-bar" onClick={this.props.doLogout}><i className="fa fa-user fa-2x color-ico" aria-hidden="true" />Cerrar sesión</NavLink>
+              <NavLink href="/login" className="link-bar" onClick={this.props.doLogout}><i className="fa fa-user fa-2x color-ico" aria-hidden="true" />{user_name} {user_lastname}<br/>     (Cerrar sesión)</NavLink>
             </NavItem>
           </Nav>
         </Nav>
@@ -50,6 +53,9 @@ class NavCarbon extends Component {
 }
 
 const mapStateToProps = state => ({
+  user: _.get(state, 'user.data.user', null),
+  session: _.get(state, 'user.data.session', null),
+  type_user: _.get(state, 'user.type', null)
 });
 
 const mapDispatchToProps = dispatch => ({
