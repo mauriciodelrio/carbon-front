@@ -29,12 +29,12 @@ class InstitutionBox extends Component {
           return (    
             <Col>
               <Button color="link" onClick={() => this.toggle(i.institution_id)} style={{ marginBottom: '1rem' }}>
-                <i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-folder fa-2x" aria-hidden="true"></i>
                 {i.institution_name}
               </Button>
               <Container id={i.institution_id}>
                 {
-                  this.state[`clicked_${i.institution_id}`] ? 
+                  this.state[`clicked_${i.institution_id}`] ?
                   <Card>
                     <CardBody>
                       <DepartamentBox institution_id={i.institution_id}/>

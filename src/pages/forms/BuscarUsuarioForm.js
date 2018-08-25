@@ -22,7 +22,6 @@ let FindUserForm = props => { // eslint-disable-line
           </FormGroup>
         </Col>
         <Col md="6" xs="12">
-          <br/>
           {isFetching ? <RenderLoading /> : (
             <Button color="primary" size="lg" className="btn-new-user">Buscar</Button>
           )}

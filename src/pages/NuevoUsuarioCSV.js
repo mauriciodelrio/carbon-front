@@ -56,9 +56,10 @@ class NuevoUsuarioCSV extends Component {
               </FormGroup>
             </Col>
             <Col md="6" xs="12">
+              <h6>Seleccionar archivo</h6>
               <CSVReader
               cssClass="react-csv-input"
-              label="Cargar CSV"
+              //label="Seleccionar archivo"
               onFileLoaded={this.handleForce}
               />
               <p>El archivo no puede superar los 10mb.</p>
@@ -66,7 +67,7 @@ class NuevoUsuarioCSV extends Component {
           </Row>
           <Row>
             <Col md="2" xs="6">
-              <Button onClick={this.toggle} disabled={this.state.register? false : true}> Cargar CSV </Button>
+              <Button onClick={this.toggle} disabled={this.state.register? false : true} className="btn-csv"> Cargar CSV </Button>
             </Col>
           </Row>
         </Container>
