@@ -20,10 +20,11 @@ class ConfirmCSV extends Component {
       <div>
         <NavCarbon user={user_name || null} type={type}></NavCarbon>
         <Container>
-          <h1>Confirmación de carga</h1>
+          <div className="top-h1"></div> 
+          <h1 align="center">Confirmación de carga</h1>
           {errors.length > 0 ?
           <div>
-            <h4>Los siguientes registros contienen errores</h4>
+            <h4 className="color-carbon">Los siguientes registros contienen errores</h4>
             <Row>
               <Col md="3" xs="12">
                 <h3>Nombre</h3>
@@ -45,15 +46,19 @@ class ConfirmCSV extends Component {
                   <Col md="3" xs="12">
                     {o[0]}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     {o[1]}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     {o[5]}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     {o[4]}
                   </Col>
+                  <br/>
                 </Row>
                 )
               })
@@ -69,7 +74,7 @@ class ConfirmCSV extends Component {
         </Container>
         <Container>
           <div className="center-h-v">
-            <Button size="lg" onClick={() => this.props.goToRoute(`/users`)}> Volver </Button>
+            <Button className="button-carbon" onClick={() => this.props.goToRoute(`/users`)}> Volver </Button>
           </div>
         </Container>
       </div>

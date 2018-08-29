@@ -37,7 +37,8 @@ class DetalleMateriales extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
-        <h1>{_.get(course, 'data.data.course_name', '')} </h1>
+        <div className="top-h1"></div> 
+        <h1 align="center">{_.get(course, 'data.data.course_name', '')} </h1>
         {_.get(materials, `${this.props.match.params.course_id}`, []).length ?
         <Table responsive>
           <thead>
@@ -71,7 +72,7 @@ class DetalleMateriales extends Component {
                     <td>{o.user_name} {o.user_lastname}</td>
                     <td>{o.category_name}</td>
                     <td>
-                      <a color="link" onClick={() => this.props.goToRoute(`/course/${this.props.match.params.course_id}/material/${o.material_id}`)}>
+                      <a className="color-carbon" onClick={() => this.props.goToRoute(`/course/${this.props.match.params.course_id}/material/${o.material_id}`)}>
                         Ver Detalle
                       </a>
                     </td>

@@ -2625,11 +2625,18 @@ footer{
 
 .nav-carbon {
   background-color: @w1;
-  height: 9vh;
+  height: auto;
+  max-height: 75px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center; 
 }
 
 .logo-carbon {
-  height: 5vw;
+  max-height: 60px;
+  min-height: 50px;
   padding-left: 20px; 
 }
 
@@ -2662,5 +2669,30 @@ footer{
   justify-content: center;
 }
 .color-carbon {
-  color: @w1;
+  color: @w1 !important;
+}
+
+.top-h1 {
+  padding-top: 3vh;
+}
+
+.button-carbon {
+  background: #D55677;
+  color: #fff;
+  font: normal 100 1.2em/1.2rem "Open sans";
+  padding: 14px 16px;
+  margin: 0;
+  text-transform: uppercase;
+  height: 50px;
+  margin: 25px 0;
+}
+
+.button-carbon-sm {
+  background: #D55677;
+  color: #fff;
+  font: normal 100 1.2em/1.2rem "Open sans";
+  padding: 10px 16px;
+  margin: 0;
+  text-transform: uppercase;
+  margin: 5px 0;
 }

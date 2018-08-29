@@ -32,9 +32,10 @@ class GestionMaterial extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
+        <div className="top-h1"></div> 
         <Row>
           <Col md="8" xs="12">
-            <h1> Gestión de material </h1>
+            <h1 align="center"> Gestión de material </h1>
           </Col>
           <Col md="4" xs="12">
             <FilterMaterialForm loginError={hasError} handleChange={this.changeFilter}/>

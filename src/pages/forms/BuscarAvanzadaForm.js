@@ -11,7 +11,8 @@ let FindMaterialForm = props => { // eslint-disable-line
   console.log("state in componenttttt", props);
   return (
     <Form onSubmit={handleSubmit}>
-      <h1>Búsqueda avanzada de material</h1>
+      <div className="top-h1"></div> 
+      <h1 align="center">Búsqueda avanzada de material</h1>
       <br/>
       <Row>
         <Col md="4" xs="12">
@@ -55,7 +56,7 @@ let FindMaterialForm = props => { // eslint-disable-line
         </Col>
         <Col md="2" xs="12">
           {isFetching ? <RenderLoading /> : (
-            <Button color="primary" size="lg" className="btn-new-user">Buscar</Button>
+            <Button className="btn-new-user button-carbon">Buscar</Button>
           )}
         </Col>
       </Row>

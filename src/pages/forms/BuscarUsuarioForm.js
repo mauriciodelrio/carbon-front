@@ -12,7 +12,8 @@ let FindUserForm = props => { // eslint-disable-line
   console.log("state in componenttttt", props);
   return (
     <Form onSubmit={handleSubmit}>
-      <h1>Cambiar estado Estudiante</h1>
+      <div className="top-h1"></div> 
+      <h1 align="center">Cambiar estado Estudiante</h1>
       <br/>
       <Row>
         <Col md="6" xs="12">
@@ -23,7 +24,7 @@ let FindUserForm = props => { // eslint-disable-line
         </Col>
         <Col md="6" xs="12">
           {isFetching ? <RenderLoading /> : (
-            <Button color="primary" size="lg" className="btn-new-user">Buscar</Button>
+            <Button className="btn-new-user button-carbon">Buscar</Button>
           )}
         </Col>
       </Row>

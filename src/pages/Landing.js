@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { scroller } from 'react-scroll';
 import { Card, CardImg, CardText, CardBody, 
-CardTitle, CardSubtitle } from 'reactstrap';
+CardTitle, CardSubtitle, Col, Row, Container } from 'reactstrap';
 
 class Landing extends Component {
   
@@ -21,9 +21,9 @@ class Landing extends Component {
     return (
       <div>
         <section className="landing-section" id="intro">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="intro-left col-sm-6">
+          <Container>
+            <Row>
+              <div className="intro-left col-sm-12">
                 <img className="img-fluid logo" src={logo} alt="carbon" />
                 <h1>Material de estudios para tod@s</h1>
                 <h2>Tu red social educativa que te conecta con miles de estudiantes</h2>
@@ -31,25 +31,42 @@ class Landing extends Component {
                 <h5>Colabora con tus apuntes</h5>
                 <h6>Miles de estudiantes agradecerán tu contenido</h6>
               </div>
-              <div className="intro-right col-sm-6">
-                <img className="img-fluid" src={require('../assets/img/wireframescarbon-05.png')} alt="carbon" />
-              </div>
+            </Row>
+            <div className="intersection row">
+              <i 
+                style={{ cursor: 'pointer' }} onClick={() => this.handleScrollToElement('first')}
+                className="fa fa-angle-down fa-2x" aria-hidden="true"
+              />
             </div>
+          </Container>
+        </section>
+
+        <section className="landing-section" id="first">
+          <Container>
+            <Row sm="12">
+              <h1 align="center"> Esto es lo que conocerás </h1>
+            </Row>
+            <div className="top-h1"></div> 
+            <Row sm="12">
+              <Col sm="6">
+                <img className="img-fluid" src={require('../assets/img/c1.png')} alt="carbon" />
+              </Col>
+              <Col sm="6">
+                <img className="img-fluid" src={require('../assets/img/c2.png')} alt="carbon" />
+              </Col>
+            </Row>
             <div className="intersection row">
               <i 
                 style={{ cursor: 'pointer' }} onClick={() => this.handleScrollToElement('second')}
                 className="fa fa-angle-down fa-2x" aria-hidden="true"
-              />
+                />
             </div>
-          </div>
+          </Container> 
         </section>
         <section className="landing-section" id="second">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-sm-6">
-                <img className="img-fluid" src={require('../assets/img/wireframescarbon-02.png')} alt="carbon" />
-              </div>
-              <div className="col-sm-6">
+          <Container>
+            <Row>
+              <Col sm="12">
                 <h1><i className="fa fa-search" aria-hidden="true" /> Busca Material</h1>
                 <h5>Según las categorías definidas en carbon.</h5>
                 <div className="right-elem">
@@ -63,15 +80,15 @@ class Landing extends Component {
                 <div className="vod">
                   <Link to={'/login'} ><button className="btn">Conoce más</button></Link>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
             <div className="intersection row">
               <i
                 style={{ cursor: 'pointer' }} onClick={() => this.handleScrollToElement('teams')}
                 className="fa fa-angle-down fa-2x" aria-hidden="true"
-              />
+                />
             </div>
-          </div>
+          </Container>
         </section>
         <section className="landing-section" id="teams">
           <div className="container-fluid">
@@ -99,7 +116,7 @@ class Landing extends Component {
                   </div>
                   <div className="col-sm-3 card">
                     <Card>
-                      <CardImg top width="100%" className="card-img" src={require('../assets/img/mauro.png')} alt="Card image cap" />
+                      <CardImg top width="100%" className="card-img" src={require('../assets/img/mauro.jpg')} alt="Card image cap" />
                       <CardBody>
                         <CardTitle>Mauricio Del Río</CardTitle>
                         <CardSubtitle>LCC - USACH</CardSubtitle>

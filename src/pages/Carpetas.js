@@ -17,8 +17,9 @@ class Carpetas extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
-        <h1> Búsqueda por carpetas </h1>
-      <InstitutionBox />
+        <div className="top-h1"></div> 
+        <h1 align="center"> Búsqueda por carpetas </h1>
+        <InstitutionBox />
       </Container>
       </div>
     );

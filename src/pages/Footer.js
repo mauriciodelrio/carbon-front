@@ -14,7 +14,7 @@ class Footer extends Component {
           <div className="col-md-5">
             <ul className="footer-social">
               <li><p>Siguenos en</p></li>
-              <li><a><i className="fa fa-facebook" aria-hidden="true" /><noscript /></a></li>
+              <li><Link target='_blank' to='https://web.facebook.com/carbonpuntocl'><i className="fa fa-facebook" aria-hidden="true" /><noscript /></Link></li>
               <li><a><i className="fa fa-twitter" aria-hidden="true" /><noscript /></a></li>
               <li><a><i className="fa fa-instagram" aria-hidden="true" /><noscript /></a></li>
             </ul>

@@ -29,6 +29,7 @@ import EditarUsuario from './pages/EditarUsuario';
 import NuevoUsuarioCSV from './pages/NuevoUsuarioCSV';
 import ConfirmCSV from './pages/ConfirmCSV';
 import BuscarAvanzada from './pages/BuscarAvanzada';
+import NuevoMaterial from './pages/NuevoMaterial';
 
 // https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 const muiTheme = getMuiTheme({
@@ -85,6 +86,7 @@ const Main = (props) => {
                   <Route path="/user/edit" component={EditarUsuario} />
                   <Route path="/user/new/csv/confirm" component={ConfirmCSV}/>
                   <Route path="/user/new/csv" component={NuevoUsuarioCSV} />
+                  <Route path="/upload" component={NuevoMaterial} />
                   <Route path="/user/new" component={NuevoUsuario} />
                   <Route path="/admin-materials" component={GestionMaterial} />
                   <Route exact path="/:ins_id/:dept_id/career/:career_id" component={DetalleCarrera} />

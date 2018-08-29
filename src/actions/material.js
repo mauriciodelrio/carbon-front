@@ -2,7 +2,6 @@ import _ from 'lodash';
 import { push } from 'react-router-redux';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 export const getData = (type, data = {}) => ({
   type,
   data,
@@ -193,6 +192,52 @@ export const performChangeStateMaterial = (payload) => (dispatch, getState, api)
     toast.error("Ha ocurrido un error, intente más tarde");
     dispatch(push('/home'));
   });
+}
+
+export const performDownloadMaterial = (payload) => (dispatch, getState, api) => {
+  api.download_material(payload).then((resp) => {
+    console.log("api trigger");
+  }).catch((err) => {
+    console.log("err", err)
+    toast.error("Ha ocurrido un error, intente más tarde");
+  });
+}
+
+export const performCreateMaterial = (payload) => (dispatch, getState, api) => {
+  if (payload.material) {
+    console.log ("kiero verrrr", payload)
+    api.create_material(payload).then((resp) => {
+      console.log('resp create material' , resp);
+      if(resp.status === "OK" && resp.data) {
+        api.create_material_category(payload.category_id, resp.data.material_id).then((resp) => {
+        }).catch((err) => {
+        });
+
+        api.create_material_type(payload.typematerial_id, resp.data.material_id).then((resp) => {
+        }).catch((err) => {
+        });
+
+        _.map(payload.keywords, (o) => {
+          if(o.__isNew__){
+            api.create_material_keyword('', resp.data.material_id, true, o.label).then((resp) => {
+            }).catch((err) => {
+            });
+          } else {
+            api.create_material_keyword(o.value, resp.data.material_id, false, o.label).then((resp) => {
+            }).catch((err) => {
+            });
+          }
+        })
+        toast.success("Material subido, tu material queda pendiente de aprobación.");
+        //dispatch(push('/home'));
+      }
+    }).catch((err) => {
+      console.log("err", err)
+      toast.error("Ha ocurrido un error, intente más tarde");
+    });
+  } else {
+    toast.error("Faltan parámetros");
+  }
 }
 
 export const goToRoute = (route, id = '', payload = {}) => (dispatch) => {

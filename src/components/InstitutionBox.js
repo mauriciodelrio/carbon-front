@@ -28,7 +28,7 @@ class InstitutionBox extends Component {
         {this.props.institutions.map(i =>{
           return (    
             <Col>
-              <Button color="link" onClick={() => this.toggle(i.institution_id)} style={{ marginBottom: '1rem' }}>
+              <Button outline color="danger" onClick={() => this.toggle(i.institution_id)} style={{ marginBottom: '1rem' }}>
                 <i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>
                 {i.institution_name}
               </Button>

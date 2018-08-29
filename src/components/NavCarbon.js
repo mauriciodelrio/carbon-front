@@ -43,7 +43,7 @@ class NavCarbon extends Component {
           </NavItem>
           <Nav className="justify-content-end">
             <NavItem>
-              <NavLink href="/login" className="link-bar" onClick={this.props.doLogout}><i className="fa fa-user fa-2x color-ico" aria-hidden="true" />{user_name} {user_lastname}<br/>     (Cerrar sesión)</NavLink>
+              <NavLink href="/login" className="link-bar" onClick={this.props.doLogout}><i className="fa fa-user fa-2x color-ico" aria-hidden="true" /> {user_name} {user_lastname}</NavLink>
             </NavItem>
           </Nav>
         </Nav>

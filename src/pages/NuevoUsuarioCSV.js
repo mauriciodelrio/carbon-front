@@ -48,7 +48,8 @@ class NuevoUsuarioCSV extends Component {
       <div>
         <NavCarbon user={user_name || null} type={type}></NavCarbon>
         <Container>
-          <h1>Carga masiva de usuarios</h1>
+          <div className="top-h1"></div> 
+          <h1 align="center">Carga masiva de usuarios</h1>
           <Row>
             <Col md="6" xs="12">
               <h4>Información</h4>
@@ -67,7 +68,7 @@ class NuevoUsuarioCSV extends Component {
           </Row>
           <Row>
             <Col md="2" xs="6">
-              <Button onClick={this.toggle} disabled={this.state.register? false : true}> Cargar CSV </Button>
+              <Button className="button-carbon" onClick={this.toggle} disabled={this.state.register? false : true}> Cargar CSV </Button>
             </Col>
           </Row>
         </Container>
@@ -97,12 +98,15 @@ class NuevoUsuarioCSV extends Component {
                   <Col md="3" xs="12">
                     {o[0]}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     {o[1]}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     {o[5]}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     {o[4]}
                   </Col>
@@ -116,7 +120,7 @@ class NuevoUsuarioCSV extends Component {
           }
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.submit}>Confirmar</Button>{' '}
+            <Button className="button-carbon" onClick={this.submit}>Confirmar</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancelar</Button>
           </ModalFooter>
         </Modal>

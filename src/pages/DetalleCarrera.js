@@ -36,7 +36,8 @@ class DetalleCarrera extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
-        <h1>{_.get(career, 'data.career_name', '')} </h1>
+        <div className="top-h1"></div> 
+        <h1 align="center">{_.get(career, 'data.career_name', '')} </h1>
         {_.get(courses, `${this.props.match.params.career_id}.data`, []).length ?
         <Table responsive>
           <thead>
@@ -54,7 +55,7 @@ class DetalleCarrera extends Component {
                     <td>{o.course_name}</td>
                     <td>{o.description}</td>
                     <td>
-                      <a color="link" onClick={() => this.props.goToRoute(`/career/${this.props.match.params.career_id}/course/${o.course_id}/materials`)}>
+                      <a className="color-carbon" onClick={() => this.props.goToRoute(`/career/${this.props.match.params.career_id}/course/${o.course_id}/materials`)}>
                         Ver Contenido
                       </a>
                     </td>
@@ -65,7 +66,10 @@ class DetalleCarrera extends Component {
           </tbody>
         </Table>
         :
-        <h3>Aún no existen cursos registrados para esta carrera</h3>
+        <div>
+          <div className="top-h1"></div>
+          <h3 align="center" className="color-carbon">Aún no existen cursos registrados para esta carrera</h3>
+        </div>
         }
       </Container>
       </div>

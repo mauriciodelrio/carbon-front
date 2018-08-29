@@ -17,8 +17,9 @@ class GestionUsuarios extends Component {
        <div>
         <NavCarbon user={user_name || null} type={type}></NavCarbon>
         <Container>
-          <Row className="center">
-            <h1 className="center"> Gestión de usuarios </h1>
+          <div className="top-h1"></div> 
+          <Row>
+            <h1 align="center"> Gestión de usuarios </h1>
           </Row>
           <Row className="center">
             <Col sm="4">

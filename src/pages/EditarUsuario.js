@@ -63,12 +63,15 @@ class EditarUsuario extends Component {
                   <Col md="3" xs="12">
                     {_.get(o, 'user_name', '')}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     {_.get(o, 'user_lastname', '')}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                   {_.get(o, 'user_state', false) ? "Activo" : "Inactivo"}
                   </Col>
+                  <br/>
                   <Col md="3" xs="12">
                     <Button onClick={() => this.changeState(_.get(o, 'user_id', ''))}>Cambiar Estado</Button>
                   </Col>

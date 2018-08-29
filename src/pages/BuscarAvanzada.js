@@ -75,14 +75,17 @@ class BuscarAvanzada extends Component {
                       <Col md="3" xs="12">
                         {_.get(o, 'name', '')}
                       </Col>
+                      <br/>
                       <Col md="3" xs="12">
                         {_.get(o, 'description', '')}
                       </Col>
+                      <br/>
                       <Col md="3" xs="12">
                       {_.get(o, 'user_name', '')} {_.get(o, 'user_lastname', '')}
                       </Col>
+                      <br/>
                       <Col md="3" xs="12">
-                        <Button onClick={() => this.props.goToRoute(`/course/${o.course_id}/material/${o.material_id}`)}>Ver detalle</Button>
+                        <Button className="button-carbon-sm" onClick={() => this.props.goToRoute(`/course/${o.course_id}/material/${o.material_id}`)}>Ver detalle</Button>
                       </Col>
                     </Row>
                   )

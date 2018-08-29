@@ -4,7 +4,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import { Container, Table, Row, Button, Col, FormGroup, Label, Input } from 'reactstrap';
 import NavCarbon from '../components/NavCarbon';
-import { performMaterialById } from './../actions/material';
+import { performMaterialById, performDownloadMaterial } from './../actions/material';
 import { push } from 'react-router-redux';
 
 class Material extends Component {
@@ -25,6 +25,11 @@ class Material extends Component {
     }
   }
 
+  download =  () => {
+    console.log("click");
+    this.props.download();
+  }
+
   render() {
     const { user_name } = this.props.user;
     const { type } = this.props.type_user;
@@ -34,9 +39,10 @@ class Material extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
+        <div className="top-h1"></div> 
         <Row>
           <Col xs="12"sm="6">
-            <h1> {_.get(material, 'data.typematerial_id', '') === "1" ? 
+            <h1 align="center"> {_.get(material, 'data.typematerial_id', '') === "1" ? 
                 <i class="fas fa-image"></i>
                 : _.get(material, 'data.typematerial_id', '') === "2" ?
                 <i class="fas fa-file"></i>
@@ -56,6 +62,7 @@ class Material extends Component {
             <p> Creado en: {moment(_.get(material, 'data.created_at', '')).format("DD/MM/YYYY")} </p>
           </Col>
         </Row>
+        <div className="top-h1"></div>
         <Row>
           <Col xs="12"sm="6">
             <FormGroup>
@@ -80,9 +87,10 @@ class Material extends Component {
             <p>{_.get(material, 'data.keyword_name', '')} </p>
           </Col>
           <Col xs="12"sm="2">
-            <Button>Descargar</Button>
+            <Button className="button-carbon" onClick ={() => this.download()} download>Descargar</Button>
           </Col>
         </Row>
+        <div className="top-h1"></div>
         <Row className="center-h-v">
           <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="700" data-numposts="20"></div>
         </Row>
@@ -102,6 +110,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getMaterialById: (payload) => {
     dispatch(performMaterialById(payload));
+  },
+  download: (payload) => {
+    dispatch(performDownloadMaterial(payload));
   },
   goToRoute: (payload) => {
     console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", payload)

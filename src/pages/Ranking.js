@@ -18,9 +18,10 @@ class Ranking extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
-        <div className="center">
-        <h1> Ranking Universidades </h1>
-        <Table >
+        <div className="top-h1"></div> 
+        <h1 align="center"> Ranking Universidades </h1>
+        <Row>
+        <Table responsive>
           <thead>
             <tr>
               <th>Posición</th>
@@ -45,8 +46,9 @@ class Ranking extends Component {
             }
           </tbody>
         </Table>
-        <h5> El Equipo de <Link to={'/'} >Carbon</Link> Agradece a toda la comunidad por sus aportes. <i class="fas fa-heart"></i></h5>
-        </div>
+        <div className="top-h1"></div> 
+        <h5 align="center"> El Equipo de <Link to={'/'} >Carbon</Link> Agradece a toda la comunidad por sus aportes. <i class="fas fa-heart"></i></h5>
+        </Row>
       </Container>
       </div>
     );

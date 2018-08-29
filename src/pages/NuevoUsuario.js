@@ -43,13 +43,13 @@ class NuevoUsuario extends Component {
   render() {
     const { isLoading, hasError } = _.get(this.props, 'user', {});
     console.log(isLoading, hasError);
-    const { user_name } = this.props.user;
+    const { user_name, institution_name } = this.props.user;
     const { type } = this.props.type_user;
     return (
       <div>
         <NavCarbon user={user_name || null} type={type}></NavCarbon>
         <Container>
-          <NuevoUsuarioForm isFetching={isLoading} loginError={hasError} onSubmit={this.submit} onChangeDate={this.onChangeDate} currDate={this.state.date}/>
+          <NuevoUsuarioForm isFetching={isLoading} loginError={hasError} onSubmit={this.submit} onChangeDate={this.onChangeDate} currDate={this.state.date} institutionName={institution_name}/>
         </Container>
       </div>
     );

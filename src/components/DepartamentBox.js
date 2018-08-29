@@ -31,7 +31,7 @@ class DepartamentBox extends Component {
         {this.props.departaments[this.props.institution_id] && this.props.departaments[this.props.institution_id].data.map(d =>{
           return (
             <div>
-              <Button color="link" onClick={() => this.toggle(d.departament_id)} style={{ marginBottom: '1rem' }}>
+              <Button outline color="danger" onClick={() => this.toggle(d.departament_id)} style={{ marginBottom: '1rem' }}>
                 <i class="fa fa-folder-open fa-2x color-ico-open" aria-hidden="true"></i>
                 {d.departament_name}
               </Button>

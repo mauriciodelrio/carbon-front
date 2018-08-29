@@ -26,28 +26,33 @@ class Home extends Component {
       <div>
       <NavCarbon user={user_name || null} type={type}></NavCarbon>
       <Container>
-        <Row className="center">
-          <h1 className="center"> Bienvenid@ {user_name} </h1>
+        <div className="top-h1"></div> 
+        <Row>
+          <h1 align="center"> Bienvenid@ {user_name} </h1>
         </Row>
+        <div className="top-h1"></div> 
         <Row className="center">
           <Col xs="6" sm="4">Archivos subidos al sistema: {0}</Col>
           <Col xs="6" sm="4">Archivos descargados por: {0} personas</Col>
           <Col xs="6" sm="4">Última sesión activa: {moment(this.props.session).format('DD-MM-YYYY')} </Col>
         </Row>
         { user_files ?
-        <Row className="center">
-          <h1 className="center"> Últimos archivos subidos </h1>
+        <Row>
+          <div className="top-h1"></div> 
+          <h1 align="center"> Últimos archivos subidos </h1>
         </Row>
         :
-        <Row className="center">
-          <Row className="center">
-            <h1 className="center"> Todavía no has subido material a carbon </h1>
-            <h1 className="color-carbon"> ¿Te gustaría contribuir con la comunidad? </h1>
+        <Row>
+          <Row>
+            <div className="top-h1"></div> 
+            <h1 align="center"> Todavía no has subido material a carbon </h1>
+            <div className="top-h1"></div> 
+            <h1 className="color-carbon" align="center"> ¿Te gustaría contribuir con la comunidad? </h1>
           </Row> 
           <Row className="center">
             <Col sm="12">
               <div className="vod">
-                <Link to={'/upload'} ><button className="btn" >Subir Material</button></Link>
+                <Link to={'/upload'} ><button className="button-carbon" >Subir Material</button></Link>
               </div>
             </Col>
           </Row>  

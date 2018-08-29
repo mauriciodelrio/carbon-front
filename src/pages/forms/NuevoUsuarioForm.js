@@ -6,13 +6,14 @@ import RenderLoading from './../../components/RenderLoading';
 import renderDatePicker from '../../components/DatePicker';
 
 let NewUserForm = props => { // eslint-disable-line
-  const { handleSubmit, isFetching, loginError, onChangeDate, currDate } = props;
+  const { handleSubmit, isFetching, loginError, onChangeDate, currDate, institutionName } = props;
   let errorMessage = _.get(loginError, 'message', false);
   const errorStatus = _.get(loginError, 'status', false);
   console.log("state in componenttttt", props);
   return (
     <Form onSubmit={handleSubmit}>
-      <h1>Nuevo Estudiante</h1>
+      <div className="top-h1"></div> 
+      <h1 align="center">Nuevo Estudiante</h1>
       <br/>
       <Row>
         <Col md="6" xs="12">
@@ -49,7 +50,7 @@ let NewUserForm = props => { // eslint-disable-line
         <Col md="3" xs="12">
           <FormGroup>
             <Label for="universidad"> Universidad </Label>
-            <Field className="form-control" type="text" name="university" placeholder="USACH" value="USACH" component="input" disabled/>
+            <Field className="form-control" type="text" name="university" placeholder={institutionName} value={institutionName} component="input" disabled/>
           </FormGroup>
         </Col>
         <Col md="3" xs="12">
@@ -78,7 +79,7 @@ let NewUserForm = props => { // eslint-disable-line
       </FormGroup>
       {isFetching ? <RenderLoading /> : (
         <div align="center">
-        <Button color="primary" size="lg" className="btn-new-user">Añadir Nuevo Estudiante</Button>
+        <Button className="btn-new-user button-carbon">Añadir Nuevo Estudiante</Button>
         </div>
       )}
     </Form>

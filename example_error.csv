@@ -1,4 +1,4 @@
 name,last_name,gender,institution_id,birthday,email,password
-pruebacsv,csv,male,1,10/10/2000,aaa@aaaaaa.a,asdasd
-pruebacsv2,csv2,female,1,10/10/2001,aaa@bbaba.a,asdasd
-pruebacsv3,csv3
+Gustavo,Rojas,male,1,10-10-2000,gustavo.rojas@usach.cl,1234
+Silvana,Cerda,female,1,10-10-2001,silvana.cerda@usach.cl,1234
+Bryan,Nuñez,male
